@@ -19,7 +19,7 @@ Your environment variables goes here in `.env`
 # cp .env.sample .env
 ```
 
-You can run OpenJobs locally by two ways. 
+You can run OpenJobs locally by two ways.
 - Local classic development.
 - Local Docker development.
 
@@ -56,7 +56,7 @@ We use [Redis](https://redis.io/) for asynchronous jobs.
 > You can use Docker to startup Redis.
 > ```bash
 > $ docker run --name redis -p 6379:6379 -d redis
-> ``` 
+> ```
 
 
 ##### Mail server
@@ -93,16 +93,23 @@ $ bin/rails s
 
 #### Configuring the project
 
-Starting containers
-
-```
-$ docker-compose up
-```
 
 Configure database schemas and migrations
 
 ```
 $ docker-compose run --rm web bin/setup
+```
+
+Load demo data
+
+```
+$ docker-compose run --rm web bundle exec rake db:setup
+```
+
+Starting containers
+
+```
+$ docker-compose up
 ```
 
 ## Done
